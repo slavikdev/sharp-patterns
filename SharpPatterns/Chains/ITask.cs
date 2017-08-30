@@ -1,6 +1,7 @@
 ﻿// Copyright (C) 2017 Viacheslav Shynkarenko (aka Slavik Shynkarenko).
 // All Rights Reserved.
 // slavik@slavikdev.com
+// https://www.slavikdev.com
 
 namespace SharpPatterns.Chains
 {
@@ -12,6 +13,8 @@ namespace SharpPatterns.Chains
     /// </summary>
     public interface ITask<T>
     {
+        #region Api
+
         /// <summary>
         /// Runs this task.
         /// </summary>
@@ -19,5 +22,7 @@ namespace SharpPatterns.Chains
         /// <returns>Task result.</returns>
         [UsedImplicitly]
         T Run( T previous );
+
+        #endregion
     }
 }

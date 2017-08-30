@@ -1,6 +1,7 @@
 ﻿// Copyright (C) 2017 Viacheslav Shynkarenko (aka Slavik Shynkarenko).
 // All Rights Reserved.
 // slavik@slavikdev.com
+// https://www.slavikdev.com
 
 namespace SharpPatterns.Chains
 {
@@ -41,9 +42,9 @@ namespace SharpPatterns.Chains
         /// <returns>Last task result.</returns>
         public T Run()
         {
-            return _tasks.Aggregate( 
-                _initial, 
-                ( current, task ) => task.Run( current ) 
+            return _tasks.Aggregate(
+                _initial,
+                ( current, task ) => task.Run( current )
             );
         }
 
@@ -52,8 +53,9 @@ namespace SharpPatterns.Chains
 
         #region Fields
 
-        private readonly ITask<T>[] _tasks;
         private readonly T _initial;
+
+        private readonly ITask<T>[] _tasks;
 
         #endregion
     }
