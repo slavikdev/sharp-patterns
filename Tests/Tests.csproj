@@ -44,6 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Chains\SimpleTaskChain\RunTest.cs" />
+    <Compile Include="Chains\SimpleTaskChain\TestTasks\Incrementor.cs" />
     <Compile Include="Chains\TaskChain\RunTest.cs" />
     <Compile Include="Chains\TaskChain\TestTasks\Incrementor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -9,18 +9,17 @@ namespace SharpPatterns.Chains
 
 
     /// <summary>
-    /// Defines a chain of tasks.
+    /// Defines a chain of tasks which don't return any result.
     /// </summary>
-    public interface ITaskChain<out T>
+    public interface ISimpleTaskChain
     {
         #region Api
 
         /// <summary>
         /// Runs this chain of tasks.
         /// </summary>
-        /// <returns>The result of the last task in chain.</returns>
         [UsedImplicitly]
-        T Run();
+        void Run();
 
         #endregion
     }

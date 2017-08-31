@@ -11,7 +11,7 @@ namespace SharpPatterns.Chains
     /// <summary>
     /// Defines a task which can be executed in a chain.
     /// </summary>
-    public interface ITask<T>
+    public interface IChainedTask<T>
     {
         #region Api
 

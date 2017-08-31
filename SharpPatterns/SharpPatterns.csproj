@@ -55,8 +55,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Chains\ITask.cs" />
+    <Compile Include="Chains\ISimpleChainedTask.cs" />
+    <Compile Include="Chains\IChainedTask.cs" />
+    <Compile Include="Chains\ISimpleTaskChain.cs" />
     <Compile Include="Chains\ITaskChain.cs" />
+    <Compile Include="Chains\SimpleTaskChain.cs" />
     <Compile Include="Chains\TaskChain.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

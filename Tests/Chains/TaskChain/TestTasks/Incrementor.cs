@@ -8,7 +8,7 @@ namespace Tests.Chains.TaskChain.TestTasks
     using SharpPatterns.Chains;
 
 
-    public sealed class Incrementor : ITask<int>
+    public sealed class Incrementor : IChainedTask<int>
     {
         #region Api
 

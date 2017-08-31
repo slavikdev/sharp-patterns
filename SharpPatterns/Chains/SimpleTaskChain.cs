@@ -5,29 +5,23 @@
 
 namespace SharpPatterns.Chains
 {
-    using System.Linq;
-
-
     /// <summary>
     /// The tasks chain which executes tasks in the order 
     /// they were passed to the chain.
     /// </summary>
-    /// <typeparam name="T">Task return type.</typeparam>
-    /// <seealso cref="SharpPatterns.Chains.ITaskChain{T}" />
-    public sealed class TaskChain<T> : ITaskChain<T>
+    /// <seealso cref="SharpPatterns.Chains.ISimpleTaskChain" />
+    public sealed class SimpleTaskChain : ISimpleTaskChain
     {
         #region Init
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="TaskChain{T}"/> class.
+        /// Initializes a new instance of the <see cref="SimpleTaskChain"/> class.
         /// </summary>
-        /// <param name="initial">The initial value passed to the first task.</param>
         /// <param name="tasks">
         /// The tasks, sorted in the order they need to be executed.
         /// </param>
-        public TaskChain( T initial, params IChainedTask<T>[] tasks )
+        public SimpleTaskChain( params ISimpleChainedTask[] tasks )
         {
-            _initial = initial;
             _tasks = tasks;
         }
 
@@ -39,13 +33,12 @@ namespace SharpPatterns.Chains
         /// <summary>
         /// Runs this chain of tasks.
         /// </summary>
-        /// <returns>Last task result.</returns>
-        public T Run()
+        public void Run()
         {
-            return _tasks.Aggregate(
-                _initial,
-                ( current, task ) => task.Run( current )
-            );
+            foreach ( ISimpleChainedTask chained_task in _tasks )
+            {
+                chained_task.Run();
+            }
         }
 
         #endregion
@@ -53,9 +46,7 @@ namespace SharpPatterns.Chains
 
         #region Fields
 
-        private readonly T _initial;
-
-        private readonly IChainedTask<T>[] _tasks;
+        private readonly ISimpleChainedTask[] _tasks;
 
         #endregion
     }

@@ -3,8 +3,9 @@
 // slavik@slavikdev.com
 // https://www.slavikdev.com
 
-namespace Tests.Chains.TaskChain
+namespace Tests.Chains.SimpleTaskChain
 {
+    using System.Collections.Generic;
     using NUnit.Framework;
     using SharpPatterns.Chains;
     using TestTasks;
@@ -16,15 +17,15 @@ namespace Tests.Chains.TaskChain
         [Test]
         public void Run()
         {
-            IChainedTask<int>[] tasks = {
-                new Incrementor(),
-                new Incrementor(),
-                new Incrementor()
+            var list = new List<int>();
+            ISimpleChainedTask[] tasks = {
+                new Stackker( list ),
+                new Stackker( list )
             };
-            var chain = new TaskChain<int>( 0, tasks );
-            int result = chain.Run();
+            var chain = new SimpleTaskChain( tasks );
+            chain.Run();
 
-            Assert.AreEqual( tasks.Length, result );
+            Assert.AreEqual( tasks.Length, list.Count );
         }
     }
 }
