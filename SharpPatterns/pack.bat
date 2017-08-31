@@ -1,1 +1,1 @@
-nuget pack SharpPatterns.csproj
+nuget pack SharpPatterns.csproj -Prop Configuration=Release
