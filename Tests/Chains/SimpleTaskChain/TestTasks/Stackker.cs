@@ -1,4 +1,4 @@
-﻿// Copyright (C) 2017 Viacheslav Shynkarenko (aka Slavik Shynkarenko).
+﻿// Copyright (C) 2018 Viacheslav Shynkarenko (aka Slavik Shynkarenko).
 // All Rights Reserved.
 // slavik@slavikdev.com
 // https://www.slavikdev.com
@@ -8,7 +8,6 @@ namespace Tests.Chains.SimpleTaskChain.TestTasks
     using System;
     using System.Collections.Generic;
     using SharpPatterns.Chains;
-
 
     public sealed class Stackker : ISimpleChainedTask
     {
@@ -21,7 +20,6 @@ namespace Tests.Chains.SimpleTaskChain.TestTasks
 
         #endregion
 
-
         #region Api
 
         public void Run()
@@ -30,7 +28,6 @@ namespace Tests.Chains.SimpleTaskChain.TestTasks
         }
 
         #endregion
-
 
         #region Fields
 

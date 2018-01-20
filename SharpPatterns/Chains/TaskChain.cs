@@ -1,4 +1,4 @@
-﻿// Copyright (C) 2017 Viacheslav Shynkarenko (aka Slavik Shynkarenko).
+﻿// Copyright (C) 2018 Viacheslav Shynkarenko (aka Slavik Shynkarenko).
 // All Rights Reserved.
 // slavik@slavikdev.com
 // https://www.slavikdev.com
@@ -6,7 +6,6 @@
 namespace SharpPatterns.Chains
 {
     using System.Linq;
-
 
     /// <summary>
     /// The tasks chain which executes tasks in the order 
@@ -33,7 +32,6 @@ namespace SharpPatterns.Chains
 
         #endregion
 
-
         #region Api
 
         /// <summary>
@@ -49,7 +47,6 @@ namespace SharpPatterns.Chains
         }
 
         #endregion
-
 
         #region Fields
 
